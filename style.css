@@ -81,6 +81,7 @@ button {
       padding-left: 20px;
       padding-right: 20px;
       padding-bottom: 40px;
+      transition: transform 0.3s ease;
 
       .number-bet {
         margin-top: 10px;
@@ -94,6 +95,10 @@ button {
         justify-content: center;
         align-items: center;
       }
+    }
+
+    .bet-img:hover {
+      transform: scale(1.1);
     }
   }
 
