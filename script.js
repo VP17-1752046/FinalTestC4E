@@ -16,6 +16,15 @@ const images = [
   "./assets/ga.png",
 ];
 
+const imageNames = {
+  "bau.png": "Bầu",
+  "cua.png": "Cua",
+  "tom.png": "Tôm",
+  "ca.png": "Cá",
+  "huou.png": "Hươu",
+  "ga.png": "Gà",
+};
+
 function randomImage() {
   const index = Math.floor(Math.random() * images.length);
   return images[index];
@@ -59,18 +68,17 @@ function checkResult() {
     }
   });
 
+  const resultNames = results
+    .map((src) => {
+      const fileName = src.split("/").pop();
+      return imageNames[fileName];
+    })
+    .join(", ");
+
   if (result > 0) {
-    alert(
-      `Bạn đã đoán đúng với kết quả: ${results
-        .map((src) => src.split("/").pop())
-        .join(", ")}`
-    );
+    alert(`Bạn đã đoán đúng với kết quả: ${resultNames}`);
   } else {
-    alert(
-      `Bạn đã đoán sai với kết quả: ${results
-        .map((src) => src.split("/").pop())
-        .join(", ")}`
-    );
+    alert(`Bạn đã đoán sai với kết quả: ${resultNames}`);
   }
 }
 
